@@ -156,14 +156,16 @@ def inference(all_inputs: dict) -> dict:
             last_model_id = model_id
     else:
         if model_id != MODEL_ID and not RUNTIME_DOWNLOADS:
-            return {
-                "$error": {
-                    "code": "MODEL_MISMATCH",
-                    "message": f'Model "{model_id}" not available on this container which hosts "{MODEL_ID}"',
-                    "requested": model_id,
-                    "available": MODEL_ID,
-                }
-            }
+            print("Load model from web: " + model_id)
+            download_model(model_id=model_id, model_url=None)
+            # return {
+            #     "$error": {
+            #         "code": "MODEL_MISMATCH",
+            #         "message": f'Model "{model_id}" not available on this container which hosts "{MODEL_ID}"',
+            #         "requested": model_id,
+            #         "available": MODEL_ID,
+            #     }
+            # }
 
     if PIPELINE == "ALL":
         pipeline_name = call_inputs.get("PIPELINE", None)
