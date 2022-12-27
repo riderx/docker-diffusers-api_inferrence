@@ -136,7 +136,7 @@ def inference(all_inputs: dict) -> dict:
         if last_model_id != model_id:
             if not downloaded_models.get(model_id, None):
                 model_url = call_inputs.get("MODEL_URL", None)
-                if not model_url:
+                if model_url is None:
                     return {
                         "$error": {
                             "code": "NO_MODEL_URL",
