@@ -9,14 +9,14 @@ PIPELINE = os.getenv("PIPELINE")
 USE_DREAMBOOTH = True if os.getenv("USE_DREAMBOOTH") == "1" else False
 
 MODEL_IDS = [
-    "CompVis/stable-diffusion-v1-4",
-    "hakurei/waifu-diffusion",
+    # "CompVis/stable-diffusion-v1-4",
+    # "hakurei/waifu-diffusion",
     # "hakurei/waifu-diffusion-v1-3", - not as diffusers yet
-    "runwayml/stable-diffusion-inpainting",
-    "runwayml/stable-diffusion-v1-5",
-    "stabilityai/stable-diffusion-2"
-    "stabilityai/stable-diffusion-2-base"
-    "stabilityai/stable-diffusion-2-inpainting",
+    # "runwayml/stable-diffusion-inpainting",
+    # "runwayml/stable-diffusion-v1-5",
+    "stabilityai/stable-diffusion-2-1"
+    "stabilityai/stable-diffusion-2-1-base"
+    "stabilityai/stable-diffusion-2-1-inpainting",
 ]
 
 
