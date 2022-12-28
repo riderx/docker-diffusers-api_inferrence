@@ -101,9 +101,9 @@ ENV HF_AUTH_TOKEN=${HF_AUTH_TOKEN}
 # 4) "ALL" to download all known models (useful for dev)
 # "runwayml/stable-diffusion-v1-5", "runwayml/stable-diffusion-inpainting"
 # "CompVis/stable-diffusion-v1-4", "hakurei/waifu-diffusion",
-# "stabilityai/stable-diffusion-2",
-# "stabilityai/stable-diffusion-2-inpainting" etc.
-ARG MODEL_ID="stabilityai/stable-diffusion-2"
+# "stabilityai/stable-diffusion-2-1",
+# "stabilityai/stable-diffusion-2-1-inpainting" etc.
+ARG MODEL_ID="stabilityai/stable-diffusion-2-1"
 ENV MODEL_ID=${MODEL_ID}
 
 # "" = model default.
