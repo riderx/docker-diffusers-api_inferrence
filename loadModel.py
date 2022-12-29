@@ -16,7 +16,7 @@ MODEL_IDS = [
     # "runwayml/stable-diffusion-v1-5",
     "stabilityai/stable-diffusion-2-1"
     "stabilityai/stable-diffusion-2-1-base"
-    "stabilityai/stable-diffusion-2-1-inpainting",
+    "stabilityai/stable-diffusion-2-inpainting",
 ]
 
 
