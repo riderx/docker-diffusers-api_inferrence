@@ -14,9 +14,11 @@ MODEL_IDS = [
     # "hakurei/waifu-diffusion-v1-3", - not as diffusers yet
     # "runwayml/stable-diffusion-inpainting",
     # "runwayml/stable-diffusion-v1-5",
-    "stabilityai/stable-diffusion-2-1"
-    "stabilityai/stable-diffusion-2-1-base"
+    "stabilityai/stable-diffusion-2-1",
+    "stabilityai/stable-diffusion-2-1-base",
     "stabilityai/stable-diffusion-2-inpainting",
+    "stabilityai/stable-diffusion-x4-upscaler",
+    "stabilityai/stable-diffusion-2-depth"
 ]
 
 
