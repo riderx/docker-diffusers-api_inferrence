@@ -138,14 +138,16 @@ ARG CHECKPOINT_CONFIG_URL=""
 ENV CHECKPOINT_CONFIG_URL=${CHECKPOINT_CONFIG_URL}
 # Set to true to NOT download model at build time, rather at init / usage.
 ARG RUNTIME_DOWNLOADS=0
+ARG RUNTIME_ONLY=0
 ENV RUNTIME_DOWNLOADS=${RUNTIME_DOWNLOADS}
+ENV RUNTIME_ONLY=${RUNTIME_ONLY}
 
 ADD download-checkpoint.py .
-RUN if [ "$RUNTIME_DOWNLOADS" = "0" ]; then python3 download-checkpoint.py; fi
+RUN if [ "$RUNTIME_ONLY" = "0" ]; then python3 download-checkpoint.py; fi
 ARG _CONVERT_SPECIAL
 ENV _CONVERT_SPECIAL=${_CONVERT_SPECIAL}
 ADD convert-to-diffusers.py .
-RUN if [ "$RUNTIME_DOWNLOADS" = "0" ]; then python3 convert-to-diffusers.py; fi
+RUN if [ "$RUNTIME_ONLY" = "0" ]; then python3 convert-to-diffusers.py; fi
 # RUN rm -rf checkpoints
 
 # Add your model weight files 
@@ -153,7 +155,7 @@ RUN if [ "$RUNTIME_DOWNLOADS" = "0" ]; then python3 convert-to-diffusers.py; fi
 ADD getScheduler.py .
 ADD loadModel.py .
 ADD download.py .
-RUN if [ "$RUNTIME_DOWNLOADS" = "0" ] ; then python3 download.py ; fi
+RUN if [ "$RUNTIME_ONLY" = "0" ] ; then python3 download.py ; fi
 
 # Deps for RUNNING (not building) earlier options
 ARG USE_PATCHMATCH=0
